@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container my-2 mx-4">
+    <h1 class="my-2mx-4">Edit Todo</h1>
+        <form action="/update{{data.id}}" method="post" class="my-2 mx-4">
+
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Enter Data</label>
+                <input type="text" class="form-control" id="password" name="password" value="{{ data.password }}">
+            </div>
+    
+            <button class="btn btn-success" type="submit">Update</button>
+
+        </form>
+
+        <p class="mx-4">Your Note : {{ data.password }}</p>
+
+    </div>
+{% endblock body %}
+
